@@ -1,4 +1,5 @@
 //Task 1: Create a Function to Calculate Average Sales
+//When testing my code in the console please ensure to expand the arrows to view full report, thank you!
 
 function calculateAverageSales(sales) 
 {  
