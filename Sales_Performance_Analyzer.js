@@ -30,3 +30,16 @@ function determinePerformanceRating(averageSales)
     }
 
 }
+
+
+function findTopAndBottomPerformers(salesData)
+{   
+    if (salesData.length === 0) return { topPerformer: null, bottomPerformer: null};
+
+    const topPerformer = salesData.reduce((top, salesperson) => (calculateAverageSales(salesperson.sales) > calculateAverageSales(top.sales) ? salesperson : top), salesData[0]);
+
+    const bottomPerformer = salesData.reduce((bottom, salesperson) => (calculateAverageSales(salesperson.sales) < calculateAverageSales(bottom.sales) ? salesperson : bottom), salesData[0]);
+
+    return {topPerformer, bottomPerformer};
+
+}
